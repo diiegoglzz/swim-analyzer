@@ -1,0 +1,13 @@
+__psycache__/
+*.pyc
+*.pyo
+.env
+venv/
+.venv/
+*.mp4
+*.avi
+*.mov
+*.jpg
+*.jpeg
+*.png
+.DS_Store
