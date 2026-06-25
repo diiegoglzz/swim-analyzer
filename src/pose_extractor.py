@@ -1,7 +1,7 @@
 import cv2
 import mediapipe as mp
 
-class Poseextractor:
+class PoseExtractor:
     def __init__(self):
         self.mp_pose = mp.solutions.pose
         self.pose = self.mp_pose.Pose(
