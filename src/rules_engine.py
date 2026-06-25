@@ -3,7 +3,7 @@ class RulesEngine:
     def evaluate(self, metrics):
         resultados = {}
 
-        for parte, angulo in metrics.item():
+        for parte, angulo in metrics.items():
             
             
             if angulo > 120:
@@ -15,12 +15,12 @@ class RulesEngine:
 
             resultados[parte] = {
                 "angulo": angulo,
-                "correcto": check(angulo),
+                "correcto": self.check(angulo),
                 "feedback": feedback
             }
 
         return resultados
 
 
-def check(self, angle):
-    return 90 <= angle <= 120
+    def check(self, angle):
+        return 90 <= angle <= 120

@@ -5,8 +5,8 @@ class PoseExtractor:
     def __init__(self):
         self.mp_pose = mp.solutions.pose
         self.pose = self.mp_pose.Pose(
-            min_detection_confidence = 0.5,
-            min_trackin_confidence = 0.5
+            min_detection_confidence = 0.2,
+            min_tracking_confidence = 0.2
         )
 
         self.mp_draw = mp.solutions.drawing_utils
@@ -14,7 +14,7 @@ class PoseExtractor:
     
     def extract(self, frame):
         """ Recibe un frame de OpenCV y devuelve los alndmarks destectados."""
-        rgb = cv2.cvtColor(frame, cv2.COLOR_BAYER_BG2BGR)
+        rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         results = self.pose.process(rgb)
         return results
     
